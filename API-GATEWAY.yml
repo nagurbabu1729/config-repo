@@ -1,0 +1,41 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+
+        - id: product-service
+          uri: lb://product
+          predicates:
+            - Path=/product/**
+
+        - id: order-service
+          uri: lb://order
+          predicates:
+            - Path=/order/**
+
+        - id: payment-service
+          uri: lb://Payment-Microservices
+          predicates:
+            - Path=/payment/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
