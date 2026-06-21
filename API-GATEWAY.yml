@@ -29,6 +29,10 @@ spring:
             - Path=/payment/**
           filters:
             - JwtAuthenticationFilter
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+                - Path=/auth/**
 
 eureka:
   instance:
