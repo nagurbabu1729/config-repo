@@ -14,7 +14,7 @@ spring:
           predicates:
             - Path=/product/**
           filters:
-   ``       - JwtAuthenticationFilter
+          - JwtAuthenticationFilter
 
         - id: order-service
           uri: lb://order
