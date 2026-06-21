@@ -13,6 +13,8 @@ spring:
           uri: lb://product
           predicates:
             - Path=/product/**
+          filters:
+   ``       - JwtAuthenticationFilter
 
         - id: order-service
           uri: lb://order
@@ -25,6 +27,8 @@ spring:
           uri: lb://Payment-Microservices
           predicates:
             - Path=/payment/**
+          filters:
+            - JwtAuthenticationFilter
 
 eureka:
   instance:
