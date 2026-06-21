@@ -7,4 +7,12 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
 
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+
       
