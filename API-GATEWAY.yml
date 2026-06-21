@@ -18,6 +18,8 @@ spring:
           uri: lb://order
           predicates:
             - Path=/order/**
+          filters:
+            - JwtAuthenticationFilter
 
         - id: payment-service
           uri: lb://Payment-Microservices
