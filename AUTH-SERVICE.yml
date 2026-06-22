@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: AUTH-SERVICE
+    name: AUTHENTICATIONSERVICEMS
 
 jwt:
   secret: mySecretKeyForMicroserviceProject123456789123456
